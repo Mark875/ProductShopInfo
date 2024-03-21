@@ -11,20 +11,21 @@ def SortProds(prods):
     return prods
 
 
-f = open("products.csv", encoding="utf-8-sig")
+f = open("products.csv", encoding="utf-8-sig")    # открываем файл
 headings = f.readline()
-products = [x.split(";") for x in f.read().split("\n")[0:-1]]
+products = [x.split(";") for x in f.read().split("\n")[0:-1]]   # считываем данные о продуктах
 f.close()
 sorted_prods = SortProds(products)   # получаем отсортированный список продуктов
-f1 = open("products.csv", "w", encoding="utf-8-sig")
+f1 = open("products.csv", "w", encoding="utf-8-sig")   # открываем новый файл для записи
 f1.write(headings)
 
 
 for p in sorted_prods:
     f1.write(";".join(p) + "\n")
+    # записываем отсортированный список в новый файл
 
 
-f1.close()
+f1.close()   # закрываем файл
 
 
 first_category = sorted_prods[0][0]  # получаем название первой категории

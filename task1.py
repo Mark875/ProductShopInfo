@@ -1,8 +1,8 @@
-f_input = open("products.csv", "r", encoding="utf-8-sig")
+f_input = open("products.csv", "r", encoding="utf-8-sig")   # открываем файл
 f_output = open("products_new.csv", "w", encoding="utf-8-sig")
-f_output.write(f_input.readline().split("\n")[0]+";Total\n")
+f_output.write(f_input.readline().split("\n")[0] + ";Total\n")   # открываем новый файл для записи
 
-products = [x.split(";") for x in f_input.read().split("\n")[:-1]]
+products = [x.split(";") for x in f_input.read().split("\n")[:-1]]   # считываем данные о продуктах
 summa = 0
 
 
@@ -20,6 +20,6 @@ for p in products:
 
 f_input.close()
 f_output.close()
-#закрываем файлы
+# закрываем файлы
 print(summa)
-#выводим информацию по закускам
+# выводим информацию по закускам
